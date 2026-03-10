@@ -1,14 +1,19 @@
-1#know how to write a for loop as a while loop
-#range: allows you to go forward and back wards
-start = 0
-stop = 10
-count = 1
+string = input()
 
-#for i in range(start, stop, count):
- #   print(f"{i}")
-i = start
-while start <= i < stop:
-    print(i,".\t", i*i)
-    i += 1
+char = "-_ "
+new_string = ""
+new_string += string[0].lower()
 
 
+for i in range(1,len(string)):
+    if string[i] == " " or string[i] == "-" or string[i] == "_":
+        new_string += ""
+        new_string += string[i+1].upper()
+        flag = True
+    else:
+        if flag:
+            flag = False
+            continue
+        new_string += string[i]
+        
+print(new_string)
